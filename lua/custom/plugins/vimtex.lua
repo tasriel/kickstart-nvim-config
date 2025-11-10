@@ -7,6 +7,17 @@ return {
       -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_view_method = 'zathura'
       vim.g.vimtex_mappings_prefix = ','
+
+      vim.g.vimtex_compiler_latexmk = {
+        options = {
+          '-pdf', -- Erstellt PDF-Dateien
+          '-interaction=nonstopmode',
+          '-synctex=1',
+          '-file-line-error',
+          -- ZWINGT ALLE HILFSDATEIEN IN DEN UNTERORDNER 'build'
+          '-outdir=build',
+        },
+      }
     end,
   },
 }
